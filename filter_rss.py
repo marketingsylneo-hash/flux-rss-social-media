@@ -39,8 +39,9 @@ def filter_rss():
     os.makedirs('output', exist_ok=True)
     
     # Générer le fichier RSS
-    fg.rss_file('output/feed.xml')
-    print(f"✅ Flux RSS filtré créé avec succès!")
+    fg.rss_file('output/feed.xml', pretty=True)
+print("Contenu du flux :", fg.rss_str(pretty=True)[:500])
+
 
 if __name__ == "__main__":
     filter_rss()
