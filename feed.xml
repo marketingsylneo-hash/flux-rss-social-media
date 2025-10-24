@@ -1,3 +1,20 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>JUPDLC - Social Media</title><link>https://jai-un-pote-dans-la.com/campagnes/social-media/</link><description>Flux RSS filtré pour la catégorie Social Media</description><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><language>fr</language><lastBuildDate>Fri, 24 Oct 2025 14:01:46 +0000</lastBuildDate><item><title>Accro défie l’interdiction avec ses « ACCRONYMES » décalés</title><link>https://jai-un-pote-dans-la.com/accro-accronymes-decales/</link><description>&lt;p&gt;Face à la récente décision de la Commission européenne d’interdire l’usage des termes « steak », « escalope » ou « saucisse » pour les produits sans viande, Accro contre-attaque avec humour. La marque française d’alternatives végétales lance sa nouvelle campagne « ACCRONYMES » pour tourner la règle en dérision et défendre le plaisir végétal. [&amp;#8230;]&lt;/p&gt;
-&lt;p&gt;L’article &lt;a href="https://jai-un-pote-dans-la.com/accro-accronymes-decales/"&gt;Accro défie l’interdiction avec ses « ACCRONYMES » décalés&lt;/a&gt; est apparu en premier sur &lt;a href="https://jai-un-pote-dans-la.com"&gt;JUPDLC&lt;/a&gt;.&lt;/p&gt;</description><guid isPermaLink="true">https://jai-un-pote-dans-la.com/accro-accronymes-decales/</guid><pubDate>Thu, 23 Oct 2025 14:31:48 +0000</pubDate></item></channel></rss>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0">
+  <channel>
+    <title>J'ai un pote dans la com - Social Media</title>
+    <link>https://jai-un-pote-dans-la.com/campagnes/social-media/</link>
+    <description>Flux RSS filtré pour la catégorie Social Media</description>
+    <docs>http://www.rssboard.org/rss-specification</docs>
+    <generator>python-feedgen</generator>
+    <language>fr</language>
+    <lastBuildDate>Fri, 24 Oct 2025 14:05:05 +0000</lastBuildDate>
+    <item>
+      <title>Accro défie l’interdiction avec ses « ACCRONYMES » décalés</title>
+      <link>https://jai-un-pote-dans-la.com/accro-accronymes-decales/</link>
+      <description>&lt;p&gt;Face à la récente décision de la Commission européenne d’interdire l’usage des termes « steak », « escalope » ou « saucisse » pour les produits sans viande, Accro contre-attaque avec humour. La marque française d’alternatives végétales lance sa nouvelle campagne « ACCRONYMES » pour tourner la règle en dérision et défendre le plaisir végétal. [&amp;#8230;]&lt;/p&gt;
+&lt;p&gt;L’article &lt;a href="https://jai-un-pote-dans-la.com/accro-accronymes-decales/"&gt;Accro défie l’interdiction avec ses « ACCRONYMES » décalés&lt;/a&gt; est apparu en premier sur &lt;a href="https://jai-un-pote-dans-la.com"&gt;JUPDLC&lt;/a&gt;.&lt;/p&gt;</description>
+      <guid isPermaLink="true">https://jai-un-pote-dans-la.com/accro-accronymes-decales/</guid>
+      <pubDate>Thu, 23 Oct 2025 14:31:48 +0000</pubDate>
+    </item>
+  </channel>
+</rss>
