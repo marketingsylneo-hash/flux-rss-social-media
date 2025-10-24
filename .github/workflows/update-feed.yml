@@ -3,7 +3,12 @@ name: Update RSS Feed
 on:
   schedule:
     - cron: '0 * * * *'  # Toutes les heures
-  workflow_dispatch:  # Permet de lancer manuellement
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
 
 jobs:
   update-feed:
@@ -24,8 +29,13 @@ jobs:
     - name: Run filter script
       run: python filter_rss.py
     
+    - name: Move feed to root
+      run: |
+        mkdir public
+        mv output/feed.xml public/feed.xml
+    
     - name: Deploy to GitHub Pages
       uses: peaceiris/actions-gh-pages@v3
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: ./output
+        publish_dir: ./public
