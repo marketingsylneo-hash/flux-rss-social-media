@@ -1,32 +1,31 @@
 import feedparser
 from feedgen.feed import FeedGenerator
-import requests
 from datetime import datetime
 import os
 
 # URL du flux RSS principal
 RSS_URL = "https://jai-un-pote-dans-la.com/feed/"
-
-# Catégorie à filtrer
 CATEGORY = "social media"
 
 def filter_rss():
-    # Récupérer le flux RSS
+    print("🔄 Récupération du flux RSS...")
     feed = feedparser.parse(RSS_URL)
+
+    # Vérifier que le flux est bien récupéré
+    if not feed.entries:
+        print("⚠️ Aucun article trouvé — le flux source est peut-être temporairement inaccessible.")
     
-    # Créer un nouveau flux
+    # Créer le nouveau flux
     fg = FeedGenerator()
-    fg.title(f"{feed.feed.title} - Social Media")
-    fg.link(href="https://jai-un-pote-dans-la.com/campagnes/social-media/", rel='alternate')
-    fg.description(f"Flux RSS filtré pour la catégorie Social Media")
+    fg.title("J'ai un pote dans la com - Social Media")
+    fg.link(href="https://jai-un-pote-dans-la.com/campagnes/social-media/", rel="alternate")
+    fg.description("Flux RSS filtré pour la catégorie Social Media")
     fg.language('fr')
-    
+
     # Filtrer les articles
     for entry in feed.entries:
-        # Vérifier si l'article appartient à la catégorie Social Media
-        categories = [cat.term.lower() if hasattr(cat, 'term') else str(cat).lower() 
-                     for cat in entry.get('tags', [])]
-        
+        categories = [cat.term.lower() if hasattr(cat, 'term') else str(cat).lower()
+                      for cat in entry.get('tags', [])]
         if any(CATEGORY in cat for cat in categories):
             fe = fg.add_entry()
             fe.title(entry.title)
@@ -34,14 +33,20 @@ def filter_rss():
             fe.description(entry.get('summary', ''))
             fe.published(entry.get('published', datetime.now().isoformat()))
             fe.guid(entry.link, permalink=True)
-    
-    # Créer le dossier output s'il n'existe pas
-    os.makedirs('output', exist_ok=True)
-    
-    # Générer le fichier RSS
-    fg.rss_file('output/feed.xml', pretty=True)
-print("Contenu du flux :", fg.rss_str(pretty=True)[:500])
 
+    # S'assurer que le dossier existe
+    os.makedirs('output', exist_ok=True)
+
+    # Générer le fichier RSS
+    output_path = 'output/feed.xml'
+    fg.rss_file(output_path, pretty=True)
+    print("✅ Flux RSS filtré créé avec succès :", output_path)
+
+    # Afficher un aperçu du contenu dans les logs
+    preview = fg.rss_str(pretty=True).decode('utf-8')[:500]
+    print("\n--- Aperçu du flux généré ---\n")
+    print(preview)
+    print("\n------------------------------\n")
 
 if __name__ == "__main__":
     filter_rss()
